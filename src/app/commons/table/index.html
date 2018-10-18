@@ -1,0 +1,44 @@
+<div class="table-view">
+    <div class="operation-line">
+        <div class="btn-group inline">
+            <a class="btn btn-warning" ng-click="vm.switchOfferType('qb')" ng-class="{'active':vm.state=='qb'}">QB精选</a>
+            <a class="btn btn-warning" ng-click="vm.switchOfferType('market')" ng-class="{'active':vm.state=='market'}">市场报价</a>
+        </div>
+        <div class="checkbox-group inline">
+            <!--<label class="checkbox-inline">-->
+                <!--<input type="checkbox" ng-model="vm.isActive" i-check ng-change="vm.changeFilter()" ng-true-value="1" ng-false-value="0">有效报价-->
+            <!--</label>-->
+            <label class="checkbox-inline">
+                <button class="btn btn-primary" ng-click="vm.manageOffer()">报价管理</button>
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" ng-model="vm.isSelf" i-check ng-change="vm.changeFilter()" ng-true-value="1" ng-false-value="0">我的报价
+            </label>
+        </div>
+        <div class="search-group pull-right">
+            <div class="inline-block" uib-dropdown keyboard-nav is-open="vm.openDropdown">
+                <input type="search"  ng-model="vm.searchKeyword" class="form-control input-md inline vmiddle" placeholder="机构、用户、备注"
+                ng-keyup="vm.searchKeyup($event)" uib-dropdown-toggle>
+                <i class="glyphicon glyphicon-search searchicon"></i>
+                <span class="close searchclose" ng-if="vm.searchKeyword" ng-click="vm.clickSearchClose()">×</span>
+                <ul class="dropdown-menu search-result" role="menu" uib-dropdown-menu aria-labelledby="dropdown-org" ng-if="vm.searchKeyword.length>0">
+                    <li class="drop-header" ng-if="vm.orgList.length>0">{{vm.orgType}}</li>
+                    <li tab-index="-1" role="menuitem" ng-repeat="item in vm.orgList | limitTo:5"><a ng-bind="item.name" ng-click="vm.selectSearch($event,item, vm.orgType)"></a></li>
+                    <li class="drop-header" ng-if="vm.qbUserList.length>0 || vm.qqUserList.length>0">用户</li>
+                    <li tab-index="-1" role="menuitem" ng-repeat="item in vm.qbUserList | limitTo:5"><a ng-bind="item.name" ng-click="vm.selectSearch($event,item,vm.qbUserType)"></a></li>
+                    <li tab-index="-1" role="menuitem" ng-repeat="item in vm.qqUserList | limitTo:5"><a ng-bind="item.name" ng-click="vm.selectSearch($event,item,vm.qqUserType)"></a></li>
+                    <li class="drop-header">{{vm.memoType}}</li>
+                    <li tab-index="-1" role="menuitem"><a ng-click="vm.searchMemo()">{{vm.memoWord}}</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <qb-table ng-if="vm.state=='qb' && !vm.isLoading" list="vm.qbOfferList" page="vm.qbPage" load-data="vm.loadQbData(callback)" type="vm.financingType" ></qb-table>
+    <market-table ng-if="vm.state=='market' && !vm.isLoading" list="vm.marketOfferList" page="vm.marketPage" load-data="vm.loadMarketData(callback)" type="vm.financingType"></market-table>
+    <div class="loading" ng-if="vm.isLoading">
+        <span class="spinner"><img src="app/commons/img/loading.png"></span>
+    </div>
+
+</div>

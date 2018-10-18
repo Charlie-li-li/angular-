@@ -1,0 +1,17 @@
+.martrix-view{
+    position: relative;
+}
+.loading {
+    position: absolute;
+    z-index: 999;
+    height: 580px;
+    width:100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.loading.matrix-loading {
+    height: 175px;
+}
+.matrix-loading.matrix-loading-offline{
+    height: 204px;
+}

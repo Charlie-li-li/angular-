@@ -1,0 +1,93 @@
+﻿<div class="query_alliance_quote" dragable>
+
+    <div class="modal-header">
+        {{institutionName}}
+        <button class="close" data-dismiss="modal" ng-click="onClickCancel()"><span aria-hidden="true">&times;</span></button>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="alliance_name">
+            <h3 ng-bind="boardQuery.institutionName"></h3>
+        </div>
+
+        <div class="alliance_contacts">
+            <ul class="clearfix">
+                <li ng-repeat="item in boardQuery.contactsList" ng-class="{'col-lg-12 col-md-12 col-sm-12':boardQuery.contactsList.length === 1,'col-lg-6 col-md-6 col-sm-6':boardQuery.contactsList.length === 2,'col-lg-4 col-md-6 col-sm-6':boardQuery.contactsList.length >=3}">
+                    <div class="btn-group" uib-dropdown is-open="status.isopen">
+                        <span><img src="app/commons/img/qmlogo.png" class="qm-logo pointer active" ng-click="openQM(item.qb_id)"> {{item.name}}　</span>
+                        <span ng-if="item.contact.length>0">电话：{{item.contact[0]}}</span>
+                        <span class="btn btn-primary mif-more-vert" uib-dropdown-toggle ng-if="item.contact.length>1"></span>
+                        <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" ng-if="item.contact.length>1">
+                            <li role="menuitem" ng-repeat="ite in item.contact">
+                                <i class="glyphicon glyphicon-earphone"></i> {{ite}}
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="type-list">
+            <ul class="nav nav-tabs" ng-click="onClickQuoteType($event)">
+                <li ng-repeat="item in typeList" class="uib-tab nav-item ng-isolate-scope" ng-class="{active: item.value === selectType.value}">
+                    <a class="nav-link ng-binding" ng-bind="item.displayName" tag="{{item.value}}"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="board-list">
+            <div class="board-item">
+                <table class="table">
+                    <thead ng-click="onClickHeader($event)">
+                        <tr>
+                            <th tag="institution"><i tag="institution" ng-if="tableSorterParam.prop === 'institution'" ng-class="{'ui-grid-icon-up-dir': tableSorterParam.asc > 0, 'ui-grid-icon-down-dir': tableSorterParam.asc < 0}"></i></th>
+                            <th>联系人</th>
+                            <th>联系方式</th>
+                            <th>方向</th>
+                            <th>报价类型</th>
+                            <th tag="{{item}}" class="table_head_period" ng-repeat="item in periodList">{{item.header}}<i tag="{{item}}" ng-if="isCurrentPeriodSorted(item)" ng-class="{'ui-grid-icon-up-dir': tableSorterParam.asc > 0, 'ui-grid-icon-down-dir': tableSorterParam.asc < 0}"></i></th>
+                            <th class="table_head_remark">备注</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="table_board_row" ng-repeat="board in boardList | filter: boardListFilter">
+                            <td ng-bind="board.institutionInfo.displayName"></td>
+                            <td class="table_board_contacts">
+                                <div uib-dropdown is-open="status.isopen" ng-class="{show:status.isopen}">
+                                    <span uib-tooltip="{{filterContactList(board.contacts)[0].name}}" tooltip-append-to-body="true" tooltip-animation="false" tooltip-placement="top">
+                                        <img ng-click="openQM(filterContactList(board.contacts)[0].qb_id)" class="qm-logo active" src="app/commons/img/qmlogo.png" ng-if="board.contacts.length>0">
+                                        {{" " + filterContactList(board.contacts)[0].name}}
+                                    </span>
+
+                                    <span ng-if="filterContactList(board.contacts).length>1" class="btn btn-primary mif-more-vert" uib-dropdown-toggle></span>
+                                    <ul ng-if="filterContactList(board.contacts).length>1" class="dropdown-menu dropdown-menu-left" uib-dropdown-menu role="menu">
+                                        <li ng-repeat="item in filterContactList(board.contacts)">
+                                            <img ng-click="openQM(item.qb_id)" class="qm-logo active" src="app/commons/img/qmlogo.png">
+                                            {{item.name}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td uib-tooltip="{{board.telephone | telFmt:'3-4-4'}}" tooltip-append-to-body="true" tooltip-animation="false" tooltip-placement="top"><i class="glyphicon glyphicon-earphone" ng-if="board.telephone"></i>
+                            {{" " + (board.telephone | telFmt:'3-4-4')}}</td>
+                            <!--<td ng-bind="board.boardDir.displayName"></td>-->
+                            <td>
+                                <div class="badge" ng-class="{'IN':'warning','OUT':'info'}[board.boardDir.value]" ng-bind="board.boardDir.displayName"></div>
+                            </td>
+                            <td ng-bind="board.type.displayName"></td>
+                            <td class="table_board_period" ng-repeat="item in board.periodList" ng-bind="item.period"></td>
+                            <td class="table_board_remark" uib-tooltip="{{board.remark}}" ng-bind="board.remark"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <div><span ng-bind-template="更新时间：{{lastUpdate}}"></span></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

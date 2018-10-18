@@ -1,0 +1,76 @@
+<div class="alliance-offer-management" dragable>
+    <div class="modal-header">
+        报价单
+        <button class="close" data-dismiss="modal" ng-click="vm.cancel()"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+
+        <div class="content-body">
+            <div class="type-list">
+                <ul class="nav nav-tabs" ng-click="vm.onClickQuoteType($event)">
+                    <li ng-repeat="item in vm.typeList" class="uib-tab nav-item ng-isolate-scope" ng-class="{active: item.value === vm.selectType.value}">
+                        <a class="nav-link ng-binding" ng-bind="item.displayName" tag="{{item.value}}"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="button-group" style="margin-top: 15px;">
+                <button class="btn btn-primary btn-sm pull-right" ng-click="vm.onClickAddPeriod()">添加期限</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="board-list">
+                <div class="board-item">
+                    <table class="table">
+                        <thead ng-init="vm.initTableHeader()">
+                            <tr>
+                                <th>删除</th>
+                                <th>序号</th>
+                                <th class="table_head_indtitution" ng-if="vm.isAllianceBoardable()">机构</th>
+                                <th>方向</th>
+                                <th class="table_head_period" ng-repeat="item in vm.periodList" ng-if="item.id || item.active!==0">
+                                    {{item.header}}
+                                    <button ng-if="!item.id" class="close closeperiod" data-dismiss="modal" ng-click="vm.onClickDeletePeriod(item)"><span aria-hidden="true">&times;</span></button>
+                                </th>
+                                <th class="table_head_remark">备注</th>
+                            </tr>
+                        </thead>
+
+                        <tbody ng-keydown="vm.onKeydownTable($event)">
+                            <tr class="table_board_row" ng-repeat="board in vm.boardList | filter: vm.boardListFilter ">
+                                <td ng-click="vm.onClickDeleteRow(board)"><span class="glyphicon glyphicon-minus"></span></td>
+                                <td ng-bind="$index +1"></td>
+                                <td class="table_board_indtitution" ng-if="vm.isAllianceBoardable()">
+                                    <span ng-bind="board.institutionInfo.displayName"></span>
+                                </td>
+                                <td class="table_board_direction" ng-click="vm.onClickBoardDirection($event, board)" tabindex="{{$index * (vm.periodList.length + 2)}}">
+                                    <button class="badge {{board.boardDir.value}}" ng-bind="board.boardDir.displayName"></button>
+                                </td>
+                                <td class="table_board_period editable autofocuse" price
+                                    ng-repeat="item in board.periodList" ng-model="item.period" isbeginediting="{{item.isBeginEditing}}" tabindex="{{item.tabIndex}}"></td>
+
+                                <td class="table_board_remark editable" remark ng-model="board.remark" tabindex="{{($index + 1) * (vm.periodList.length + 2) - 1 }}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="button-group-add-board">
+
+            <button ng-click="vm.onClickAddQuote()"><span class="mif-plus"></span> 添加一组报价</button>
+            <button ngf-select="vm.onClickUploadExcel($files)" ng-model="files" ngf-multiple="false">Excel导入</button>
+        </div>
+
+        <div class="button-group pull-right modal-botton">
+            <button class="btn btn-primary btn-sm" ng-click="vm.onClickSaveQuote()">确定</button>
+            <button class="btn btn-primary btn-sm" ng-click="vm.cancel()">取消</button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

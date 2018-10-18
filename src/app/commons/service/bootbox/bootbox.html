@@ -1,0 +1,20 @@
+<div class="bootbox-modal" dragable>
+	<div class="modal-header">
+		<span>提示</span>
+		<!-- <span ng-if="vm.type=='confirm'">{{vm.bodyText.title}}</span> -->
+		<button class="close" data-dismiss="modal" ng-click="vm.cancel()"><span aria-hidden="true">&times;</span></button>
+	</div> 
+	<div class="modal-body">
+	    <div class="content-body text-center" ng-if="vm.bodyText">
+	        {{vm.bodyText}}
+	    </div>
+
+        <div class="content-body text-left" ng-if="vm.bodyHtml" ng-bind-html="vm.bodyHtml"></div>
+
+	    <div class="button-group pull-right">
+			<button class="btn btn-primary btn-sm" ng-click="vm.save()">确定</button>
+			<button class="btn btn-primary btn-sm" ng-click="vm.cancel()" ng-if="vm.type=='confirm'">取消</button>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

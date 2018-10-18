@@ -1,0 +1,20 @@
+<div class="tabs-view">
+    <div class="allianceorg pull-right" ng-if="false">
+        <span>合作机构<img style="margin-left: 15px;" class="pointer" src="app/commons/img/alliancelogo.png" ng-click="allianceClick()"></span>
+        <span style="margin-right: 10px;">辽东农商行</span>
+        <span class=""><img class="qm-logo active" src="app/commons/img/qmlogo.png" class="qm-logo pointer active" ng-click="allianceOpenQM()"> 王嘉鹏　</span>
+        <span class=""> <i class="glyphicon glyphicon-earphone" ng-if="contact"></i> {{contact[0]+' '}}</span>
+        <span uib-dropdown ng-if="contact.length>1">
+            <span class="btn btn-primary mif-more-vert alliancecontact" uib-dropdown-toggle></span>
+            <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
+                <li ng-repeat="item in contact"><a><i class="glyphicon glyphicon-earphone"></i> {{item}}</a></li>
+            </ul>
+        </span>
+    </div>
+	<uib-tabset active="-1">
+		<uib-tab heading="同业理财" ui-sref="app.innerFinancing.index" ui-sref-active="active">
+		</uib-tab>
+		<uib-tab heading="同业存款" ui-sref="app.offlineFinancing.index" ui-sref-active="active">
+		</uib-tab>
+	</uib-tabset>
+</div>

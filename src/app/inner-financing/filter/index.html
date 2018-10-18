@@ -1,0 +1,17 @@
+<div class="filter-view">
+    <div class="col-sm-12 col-md-6 col-lg-3 filter-list">
+        <span class="filter-type">类型：</span>
+        <div class="filter-options inline" option-list="vm.boardDirection" ng-model="vm.selectBoardDirection" ng-change="vm.filterChanged()"></div>
+    </div>
+    <div class="filter-list col-sm-12 col-md-6 col-lg-4">
+        <span class="filter-type">类型：</span>
+        <div class="filter-options inline" option-list="vm.quoteTypeList" ng-model="vm.quoteType" ng-change="vm.filterChanged()"></div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-5 filter-list">
+        <span class="filter-type">常用地区：</span>
+        <div class="filter-options inline" option-list="vm.areaList" ng-model="vm.areas" multiple ng-change="vm.filterChanged()">
+        </div>
+        <span class="glyphicon glyphicon-cog btn-icon" ng-click="vm.setArea()"></span>
+    </div>
+    <div class="clearfix"></div>
+</div>

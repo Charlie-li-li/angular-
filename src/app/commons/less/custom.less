@@ -1,0 +1,89 @@
+.btn{
+	border-radius: 2px;
+	padding: 4px 12px;
+}
+
+.nav-tabs{
+	li{
+		a {
+			color : white;
+			background: @nav-tabs-background-color;
+			border-bottom-color : @nav-tabs-border-color;
+		}
+	}
+}
+
+.table-striped{
+	thead {
+		color : darken(white, 15%);
+		border-bottom: 1px solid lighten(@brand-bg, 20%);
+	}
+	tbody{
+		tr{
+			&:nth-of-type(odd){
+				background-color: inherit;
+			}
+			&:nth-of-type(even){
+				background-color: lighten(@brand-bg, 5%);
+			}
+			td{
+				border-top:0;
+			}
+		}
+	}
+}
+table {
+	color : @warning-text-color;
+}
+
+.dropdown-menu{
+	min-width: 100px;
+	li {
+		a {
+			cursor: pointer;
+		}
+	}
+}
+
+.badge{
+	padding : 2px 12px;
+	font-size: 13px;
+	&.primary {
+		background: @brand-primary;
+	}
+	&.info {
+		background: @brand-info;
+	}
+	&.warning {
+		background: @brand-warning;
+	}
+	&.success{
+		background: @brand-success;
+	}
+	&.danger{
+		background: @brand-danger;
+	}
+}
+
+.modal-content{
+	border-radius: @border-radius-base;
+	color : @warning-text-color;
+	border : 2px solid @modal-content-border-color;
+	.content-body{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+.modal-header {
+	background: @modal-content-border-color;
+}
+
+a{
+	color : @brand-primary;
+	cursor: pointer;
+	&:hover{
+		text-decoration: none;
+		color : lighten(@brand-primary,10%);
+	}
+}

@@ -1,0 +1,48 @@
+﻿.ui-grid .ui-grid-cell-contents.cell-user-list .dropdown,
+.ui-grid .ui-grid-cell-contents.cell-contact .dropdown {
+    padding-right: 20px;
+}
+
+
+.ui-grid .ui-grid-cell-contents.cell-user-list span.dropdown-toggle,
+.ui-grid .ui-grid-cell-contents.cell-contact span.dropdown-toggle {
+    vertical-align: middle;
+    height: 0;
+    float: none;
+    padding: 8px;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    background: transparent;
+    border-width: 2px;
+}
+
+    .ui-grid .ui-grid-cell-contents.cell-user-list span.dropdown-toggle:before,
+    .ui-grid .ui-grid-cell-contents.cell-contact span.dropdown-toggle:before {
+        color: #007879;
+        font-size: 18px;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+        border: none;
+        top: -2.5px;
+        left: 70%;
+    }
+
+.ui-grid .ui-grid-cell-contents.cell-user-list ul[role=menu],
+.ui-grid .ui-grid-cell-contents.cell-contact ul[role=menu] {
+    padding: 0;
+}
+
+
+.ui-grid .ui-grid-cell-contents.cell-user-list li[role=menuitem] > a,
+.ui-grid .ui-grid-cell-contents.cell-contact li[role=menuitem] > a {
+    width: auto;
+    padding: 5px 10px;
+    margin: 0;
+}
+
+.ui-grid .ui-grid-cell-contents.cell-contact i.glyphicon {
+    color: #d9d9d9;
+}

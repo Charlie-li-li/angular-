@@ -1,0 +1,516 @@
+body{
+    background-color: #111;
+}
+
+.tabs-view {
+    margin-top: 2px;
+}
+
+.tabs-view .nav-tabs{
+    border:none;
+}
+
+.tabs-view ul.nav-tabs>li.uib-tab a{
+    font-size: 14px;
+    width:81px;
+    height:24px;
+    line-height: 24px;
+    background: #005155;
+    padding: 0px;
+    text-align: center;
+    border-radius: 2px;
+    border:none;
+}
+
+.tabs-view ul.nav-tabs>li.uib-tab.active a{
+    background: #fb8d02;
+    cursor: pointer;
+    color: #000;
+}
+
+.tabs-view ul.nav-tabs>li.uib-tab a:focus,.tabs-view ul.nav-tabs>li.uib-tab a:active{
+    background: #fb8d02;
+}
+
+.filter-view .option {
+    border-radius: 2px;
+    color: #fff;
+}
+.filter-type:before{
+    background-color: #989898;
+}
+
+.filter-type{
+    color: #989898;
+}
+
+.table-view a.btn {
+    background:#0f2425;
+    border:1px solid #fb8d02;
+    width:118px;
+    height:22px;
+    font-size: 14px;
+    color: #ffebc8;
+    text-align: center;
+    line-height: 22px;
+    padding: 0;
+}
+
+.table-view a.btn:hover{
+    border:1px solid #fb8d02;
+}
+
+.checkbox-inline{
+    color: #ffebc8;
+}
+
+.ui-grid .ui-grid-top-panel .ui-grid-header-cell .ui-grid-cell-contents span{
+    color: #ffebc8;
+    font-size: 14px;
+}
+
+[matrix-table]{
+    border:2px solid #1a4444;
+    height:auto;
+    margin-bottom: 20px;
+}
+
+[matrix-table] table{
+    margin-top: 0;
+    background:#212121;
+    border:1px solid #000;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+[matrix-table] table tr{
+    background: #212121;
+}
+
+[matrix-table] table tr>td{
+    border:1px solid #000;
+    color: #f9c66e;
+    width:11.1%;
+    height:24px;
+}
+
+[matrix-table] table tr>td:hover{
+    color: #e8ac6b;
+}
+
+[matrix-table] table tr:nth-of-type(even),[matrix-table] table tr:nth-of-type(odd){
+    background: #212121;
+}
+
+[matrix-table] tbody>tr:nth-of-type(1)>td,[matrix-table] table tbody>tr.shiborstyle>td{
+    background: #1f3834;
+    color: #FFEBC8;
+    cursor: auto;
+}
+
+.table-striped>tbody>tr>td:nth-of-type(1){
+    background: #1f3834;
+    color: #ffebc8;
+    cursor: auto;
+}
+.table-striped>tbody>tr>td:nth-of-type(1):hover,
+[matrix-table] tbody>tr:nth-of-type(1)>td:hover,
+[matrix-table] table tbody>tr.shiborstyle>td{
+    background: #1f3834;
+    color: #ffebc8;
+}
+
+[matrix-table] tbody>tr:nth-of-type(1)>td:nth-of-type(1){
+    cursor: pointer;
+}
+
+[matrix-table] tbody>tr:nth-of-type(1)>td:nth-of-type(1):hover{
+    cursor: pointer;
+}
+
+[matrix-table] tbody>tr:nth-of-type(1)>td.selected:nth-of-type(1):hover{
+    cursor: pointer;
+    background: #fb8d02;
+}
+
+.table-striped>tbody>tr>td.selected{
+    background: #FB8D02;
+    border-radius: 0;
+    color: #000;
+}
+
+.table-striped>tbody>tr:nth-of-type(1)>td:nth-of-type(1){
+    color: #fb8d02;
+}
+
+.table-striped>tbody>tr:nth-of-type(1)>td.selected:nth-of-type(1){
+    color: #000;
+}
+
+[matrix-table] table tr td:hover {
+    border-radius: 0px;
+    background: #1a726a;
+    color: #e8ac6b;
+}
+
+.ui-grid-cell-contents span{
+    font-size: 13px;
+    color: #d8af64;
+}
+
+.ui-grid .ui-grid-row .ui-grid-cell {
+    line-height: normal;
+}
+
+.operation-line button.btn-primary.btn{
+    width:70px;
+    height: 24px;
+    padding:0;
+    font-size: 12px;
+    background-color: #0f898a;
+}
+
+.search-group input[type=search]{
+    padding-left: 25px;
+    background-color: #6e6c49;
+}
+
+.search-group input::-webkit-input-placeholder{
+    color:#3a3828;
+}
+
+.search-group div.inline-block{
+    position: relative;
+}
+
+.search-group .searchicon{
+    font-size: 16px;
+    position: absolute;
+    left:7px;
+    top:8px;
+}
+
+.ui-grid-cell-contents .QQname{
+    color: #ffebc8;
+}
+
+.ui-grid-cell-contents .badge{
+    color: #000;
+}
+
+.ui-grid-cell-contents .badge.IN{
+    background: #d48000;
+}
+
+.ui-grid-cell-contents .badge.OUT{
+    background: #0077ba;
+}
+
+.icheckbox_minimal-aero,
+.iradio_minimal-aero {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    background: url(../img/change.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_minimal-aero {
+    background-position: 0 0;
+}
+.icheckbox_minimal-aero.hover {
+    background-position: -20px 0;
+}
+.icheckbox_minimal-aero.checked {
+    background-position: -40px 0;
+}
+.icheckbox_minimal-aero.disabled {
+    background-position: -60px 0;
+    cursor: default;
+}
+.icheckbox_minimal-aero.checked.disabled {
+    background-position: -80px 0;
+}
+
+.close.closeperiod{
+    float: none;
+    vertical-align: baseline;
+}
+
+.search-group .close.searchclose{
+    position: absolute;
+    right:20px;
+    top:5px;
+    color: #111;
+    opacity:1;
+}
+
+.ui-grid .ui-grid-row .ui-grid-cell .ui-grid-cell-contents.cell-contact,
+.ui-grid .ui-grid-row .ui-grid-cell .ui-grid-cell-contents.cell-user-list{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-grid .ui-grid-row .ui-grid-cell .ui-grid-cell-contents.cell-user-list.show,
+.ui-grid .ui-grid-row .ui-grid-cell .ui-grid-cell-contents.cell-contact.show{
+    overflow: visible;
+}
+
+div.contactmodel{
+    top:150px;
+}
+
+.modal-header{
+    background: #1a4444;
+}
+
+.nav-tabs li a{
+    background: #174444;
+    color: #ffebc8;
+    font-size: 14px;
+}
+
+.offer-management .type-list ul > li.active > a,
+.alliance-offer-management .type-list ul > li.active > a{
+    background: #ff900d;
+    border-bottom-color: #ff900d;
+}
+
+.offer-management .warning,
+.offer-management .board-item table td,
+.alliance-offer-management .warning,
+.alliance-offer-management .board-item table td {
+    color: #f8c976;
+}
+
+.offer-management .board-item a,
+.alliance-offer-management .board-item a{
+    color: #c3bdb0;
+}
+
+.offer-management .board-item .board-header,
+.alliance-offer-management .board-item .board-header{
+    background-color: #023235;
+}
+
+.offer-management .board-item table,
+.alliance-offer-management .board-item .table{
+    background-color: #022a2d;
+    border-color: #023235;
+}
+
+.offer-management .board-item table tr td,
+.alliance-offer-management .board-item .table tr td,
+.alliance-offer-management .board-item .table thead tr th{
+    border-color: #023235;
+}
+
+.alliance-offer-management .board-item .table thead tr th{
+    height: 41px;
+}
+
+.offer-management .board-item table td.editable,
+.offer-management .board-item table td.space,
+.alliance-offer-management .board-item table td.editable,
+.alliance-offer-management .board-item table td.space{
+    color: #ffebc8;
+    background-color: #394836;
+}
+
+.offer-management .board-item table input[type=text],
+.alliance-offer-management .board-item table input[type=text]{
+    color: #000;
+}
+
+.offer-management button.btn-primary,
+.alliance-offer-management button.btn-primary,
+.modal-dialog button.btn-primary{
+    color: #000;
+    background-color: #51aba0;
+    border-radius: 3px;
+}
+
+.offer-management button.btn-primary:hover,
+.offer-management button.btn-primary:focus,
+.offer-management button.btn-primary:active,
+.alliance-offer-management button.btn-primary:hover,
+.alliance-offer-management button.btn-primary:focus,
+.alliance-offer-management button.btn-primary:active,
+.modal-dialog button.btn-primary:hover,
+.modal-dialog button.btn-primary:focus,
+.modal-dialog button.btn-primary:active{
+    color: #000;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover{
+    border:none;
+    border-bottom: 1px solid #ff900d;
+}
+
+.offer-management .board-item table .dropdown-menu,
+.alliance-offer-management .board-item table .dropdown-menu{
+    background-color: #023c40;
+}
+.offer-management .board-item table .dropdown-menu>li>a:focus,
+.offer-management .board-item table .dropdown-menu>li>a:hover,
+.alliance-offer-management .board-item table .dropdown-menu>li>a:focus,
+.alliance-offer-management .board-item table .dropdown-menu>li>a:hover{
+    background-color: #045a60;
+}
+
+.offer-management .board-item table td .add:hover,
+.alliance-offer-management .board-item table td .add:hover{
+    background-color: #045a60;
+}
+
+.contact-modal .content-body .contact-item .col-sm-6{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.alliance_add_sp_priod input[type=text]{
+    line-height:2rem;
+}
+
+.ui-grid .ui-grid-cell-contents.cell-user-list span.dropdown-toggle:before,
+.ui-grid .ui-grid-cell-contents.cell-contact span.dropdown-toggle:before{
+    left:11px;
+}
+
+.copyqqsuccess{
+    position: absolute;
+    top:400px;
+    padding: 10px 20px;
+    color: #F9C66E;
+    background: #017573;
+    z-index: 99;
+    left: 50%;
+    transform: translate(-50%, 50px);
+    cursor: pointer;
+}
+
+.query_alliance_quote .board-item .table tbody tr td:nth-child(2) div.dropdown,
+.query_alliance_quote .board-item .table thead tr th:nth-child(3){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.offer-management .content-body{
+    margin: 25px 0px;
+    overflow: scroll;
+    padding-right: 10px;
+    max-height: 300px;
+}
+
+body{
+    overflow: hidden;
+    padding-right: 0px!important;
+}
+
+.offer-confirm-modal .modal-body .content-body{
+    overflow: scroll;
+    max-height: 400px;
+}
+
+.offer-confirm-modal .modal-body .content-body .table-responsive{
+    overflow: visible;
+}
+
+.offer-confirm-modal .modal-body .content-body::-webkit-scrollbar-thumb{
+    background: #1A4444;
+}
+
+.query_alliance_quote .board-item{
+    max-height: 300px;
+}
+
+.query_alliance_quote .board-item .table tbody tr td:nth-child(2) div.dropdown.show,
+.query_alliance_quote .board-item .table thead tr th:nth-child(3){
+    overflow: visible;
+}
+
+.query_alliance_quote .board-item .table thead tr th:nth-child(2),
+.query_alliance_quote .board-item .table tbody tr td:nth-child(2){
+    min-width: 9rem;
+}
+
+button.badge{
+    width:auto!important;
+}
+
+.alliance-offer-management .board-item{
+    max-height: 300px;
+}
+
+.alliance_add_quote ul{
+    max-height:400px;
+}
+
+.allianceorg{
+    color: #ffebc8;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+html{
+    font-size: 12px!important;
+}
+
+.dropdown .alliancecontact.dropdown-toggle{
+    vertical-align: middle;
+    height: 0;
+    float: none;
+    padding: 8px;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    background: transparent;
+    border-width: 2px;
+}
+
+.dropdown .alliancecontact.dropdown-toggle:before{
+    color: #007879;
+    font-size: 18px;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    border: none;
+    top: -2.5px;
+    left: 70%;
+}
+
+.query_alliance_quote .alliance_contacts ul>li{
+    white-space: nowrap;
+}
+
+.modal-open .modal{
+    overflow-y: hidden;
+}
+
+.offer-management .board-item table tr td{
+    max-width: 100px;
+}
+
+.offer-management .board-item table tr td:nth-of-type(1){
+    min-width: 56px;
+    white-space: nowrap;
+}
+
+.qm-logo{
+    -webkit-filter: grayscale(0);
+}
+
+.query_alliance_quote .modal-body .board-item .table>tbody>tr>td{
+    padding: 4px!important;
+}

@@ -1,0 +1,20 @@
+<table class="table table-striped table-bordered" border="1px">
+	<tbody>
+		<tr>
+			<td class="matrix-header" ng-class="{'selected': vm.showAll }" ng-click="vm.clickShowAll('showAll')">SHOW ALL</td>
+			<td class="matrix-header" ng-repeat="header in vm.tableHeaders" ng-class="{'hover':vm.hoverColumn == $index}">{{header}}</td>
+		</tr>
+		<tr ng-repeat="row in vm.rowsData" ng-class="{'shiborstyle':vm.rowsNames[$index] === 'Shibor'}">
+			<td width="12%" class="matrix-rowname" ng-class="{'hover':vm.hoverRow == $index}">{{vm.rowsNames[$index]}}</td>
+			<td class="matrix-rowdata" ng-repeat="data in row" ng-mouseenter="vm.hoverline($parent.$index, $index)" 
+				ng-click="vm.clickData(data)" ng-mouseleave="vm.leaveline()" 
+			ng-class="{'hover':(vm.hoverRow == $parent.$index && $index<=vm.hoverColumn) || (vm.hoverColumn == $index && $parent.$index <= vm.hoverRow), 'selected':data.selected}">
+				<span ng-if="!data.min && !data.max">-</span>
+				<span ng-if="data.min && data.max && data.min!=data.max">{{data.min | number:2}}-{{data.max | number:2}}</span>
+				<span ng-if="data.min && data.max && data.min==data.max">{{data.min | number:2}}</span>
+				<span ng-if="!data.min && data.max">{{data.max | number:2}}</span>
+				<span ng-if="data.min && !data.min">{{data.min | number:2}}</span>
+			</td>
+		</tr>
+	</tbody>
+</table>
