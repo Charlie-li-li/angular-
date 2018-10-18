@@ -1,0 +1,1 @@
+!function(){"use strict";function n(n,o){var e=this;e.offerData=o,e.save=function(){n.close(!0)},e.cancel=function(){n.dismiss()}}angular.module("services").controller("offerConfirmController",n),n.$inject=["$uibModalInstance","offerData"]}();

@@ -1,0 +1,2 @@
+D:\Sumscope\scmopmoney-market\Java\src\main\webapp\moneymarket\obj\Debug\moneymarket.njsprojResolveAssemblyReference.cache
+D:\Sumscope\scmopmoney-market\Java\src\main\webapp\moneymarket\bin\Microsoft.NodejsTools.WebRole.dll

@@ -1,0 +1,1 @@
+!function(){Number.prototype.toFixed=function(t){var i=0,o=this<0,r=o?-this+"":this+"",h=r.indexOf(".");r.substr(h+t+1,1)>=5&&(i=1);var s=Math.pow(10,t),n=Math.floor((o?-this:this)*s)+i;return o?-(n/s):n/s}}();

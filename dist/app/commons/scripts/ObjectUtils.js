@@ -1,0 +1,1 @@
+!function(){Object.prototype.Clone=function(){var t,o=this;t=o.constructor===Object?new o.constructor:new o.constructor(o.valueOf());for(var n in o)o.hasOwnProperty(n)&&t[n]!==o[n]&&("object"==typeof o[n]?t[n]=o[n].Clone():t[n]=o[n]);return t.toString=o.toString,t.valueOf=o.valueOf,t}}();

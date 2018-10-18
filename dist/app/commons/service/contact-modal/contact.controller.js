@@ -1,0 +1,1 @@
+!function(){"use strict";function n(n,t,i,o){var e=this;e.quoteData=i,e.openQM=function(n){o.openQM(n.qb_id)},e.institutionOffer=function(){t.close({id:i.institution_id,name:i.institution_name})},e.cancel=function(){t.dismiss()}}angular.module("services").controller("contactModalController",n),n.$inject=["$scope","$uibModalInstance","quoteData","qbService"]}();
